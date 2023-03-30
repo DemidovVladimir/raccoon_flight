@@ -1,9 +1,8 @@
 from pprint import pprint
-from flights.flights import Flights
-from codes.airport_code import AirportCode
-from model.model import Model
-from notifications.push_notifications import PushNotifications
-import asyncio
+from flights import Flights
+from airport_code import AirportCode
+from model import Model
+from push_notifications import PushNotifications
 import argparse
 
 def init_argparse() -> argparse.ArgumentParser:
@@ -48,17 +47,15 @@ def main():
         row['iataCode'] = res
         try:
             # data = asyncio.run(fd.get_prices(res, args.startfrom, args.startto, row.LowestPrice, row.HighestPrice))
-            data = asyncio.run(
-                fd.get_round_prices(
-                    res, 
-                    args.startfrom, 
-                    args.startto, 
-                    row.LowestPrice, 
-                    row.HighestPrice, 
-                    args.nightslow, 
-                    args.nightsbig, 
-                    args.maxduration
-                )
+            data = fd.get_round_prices(
+                res, 
+                args.startfrom, 
+                args.startto, 
+                row.LowestPrice, 
+                row.HighestPrice, 
+                args.nightslow, 
+                args.nightsbig, 
+                args.maxduration
             )
             pprint(data)
             pn.send_email('new flight prices', data)
