@@ -1,3 +1,6 @@
 .env
 __pycache__
 flightraccoon
+build
+dist
+flight_raccoon.egg-info
