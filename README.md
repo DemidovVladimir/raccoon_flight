@@ -4,15 +4,15 @@
 
 ### Some dummy unit tests:
 
-```bash python3 -m unittest test_push_notifications.py```
+```python3 -m unittest test_push_notifications.py```
 
 ### Install cli command:
 
-```bash python3 -m setup.py install```
+```python3 -m setup.py install```
 
 ### Run flight scanner:
 
-flight_raccoon -sf 20/05/2023 -st 11/06/2023 -nl 21 -nb 28 -md 15
+```flight_raccoon -sf 20/05/2023 -st 11/06/2023 -nl 21 -nb 28 -md 15```
 
 
 ### Environment variables:
