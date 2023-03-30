@@ -4,11 +4,11 @@
 
 ### Some dummy unit tests:
 
-python3 -m unittest test_push_notifications.py
+```bash python3 -m unittest test_push_notifications.py```
 
 ### Install cli command:
 
-python3 -m setup.py install
+```bash python3 -m setup.py install```
 
 ### Run flight scanner:
 
