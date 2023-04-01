@@ -34,8 +34,7 @@ class Flights:
             with requests.Session() as session:
                 with session.get(self.url, headers=self.headers) as response:
                     data = response.json()
-                    # you can filter data here...
-                    # data = [{x: y for x, y in n.items() if x in ['cityTo', 'conversion', 'countryTo', 'has_airport_change', 'price', 'local_departure', 'local_arrival']} for n in data.get('data') if (n.get('pnr_count') < 2) and (n.get('availability').get('seats') is not None) and int(n.get('availability').get('seats', 0)) > 3]
+                    data = [{x: y for x, y in n.items() if x in ['cityTo', 'conversion', 'countryTo', 'has_airport_change', 'price', 'local_departure', 'local_arrival', 'deep_link']} for n in data.get('data') if (n.get('pnr_count') < 2) and (n.get('availability').get('seats') is not None) and int(n.get('availability').get('seats', 0)) > 3]
                     return data
         except Exception as e:
             print(e)

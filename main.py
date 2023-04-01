@@ -58,7 +58,8 @@ def main():
                 args.maxduration
             )
             pprint(data)
-            pn.send_email('new flight prices', data)
+            if (len(data) > 0):
+                pn.send_email('Best flight prices', data)
         except Exception as e:
             print(f"{row} error: {e}")
 
